@@ -1,0 +1,36 @@
+﻿body {
+}
+
+.btn {
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 4px;
+    color: black;
+    background-color: lightblue;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    border: 1px solid #808080;
+    background-color:burlywood;
+    color:palevioletred;
+    cursor: pointer;
+}
+
+.btn2 {
+    font-size: 12px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: black;
+    background-color: lightblue;
+    text-align: center;
+    text-decoration: none;
+    margin:2px;
+}
+
+.btn2:hover {
+    background-color: burlywood;
+    color: palevioletred;
+    cursor: pointer;
+}

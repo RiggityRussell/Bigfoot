@@ -1,16 +1,28 @@
 ﻿@page
 @model Bigfoot.Pages.Team.IndexModel
 
-@{
-    ViewData["Title"] = "Index";
+@section head{
+    <link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            background-color: darkolivegreen;
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+    </style>
 }
 
-<h1>Index</h1>
+@{
+    ViewData["Title"] = "Bigfoot Database";
+}
+
+<h1>Bigfoot Database</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn">New Sighting</a>
 </p>
-<table class="table">
+<table class="table text-white table-bordered table-dark table-hover table-sm table-responsive">
     <thead>
         <tr>
             <th>
@@ -44,9 +56,9 @@
                 @Html.DisplayFor(modelItem => item.Photo)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" class="btn2" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" class="btn2" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" class="btn2" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
