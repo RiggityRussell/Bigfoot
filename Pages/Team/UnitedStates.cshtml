@@ -7,84 +7,99 @@
 
 <h1>UnitedStates</h1>
 <h2>BigFoot Sightings per State</h2>
-<div id="geochart-colors" style="width: 700px; height: 433px;"></div>
-<div>
+<div id="bigfoot">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
         google.charts.load('current', {
+            callback: drawRegionsMap,
             'packages': ['geochart'],
-            // Note: Because this chart requires geocoding, you'll need mapsApiKey.
-            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
             'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
         });
+
         google.charts.setOnLoadCallback(drawRegionsMap);
 
         function drawRegionsMap() {
             var data = google.visualization.arrayToDataTable([
                 ['State', 'Sightings'],
-                ['US-IL', 302],
-                ['US-IN', 82],
-                ['US-IA', 76],
-                ['US-RI', 5],
-                ['US-MI', 225],
-                ['US-AL', 101],
-                ['US-AR', 85],
-                ['US-AK', 110],
-                ['US-FL', 337],
-                ['US-AZ', 85],
-                ['US-CA', 460],
-                ['US-CO', 130],
-                ['US-CT', 21],
-                ['US-DE', 5],
-                ['US-NC', 106],
-                ['US-SC', 57],
-                ['US-MD', 35],
-                ['US-PA', 125],
-                ['US-OH', 318],
-                ['US-KY', 115],
-                ['US-GA', 139],
-                ['US-NM', 17],
-                ['US-OK', 111],
-                ['US-ND', 6],
-                ['US-SD', 19],
-                ['US-MT', 53],
-                ['US-MN', 20],
-                ['US-OR', 257],
-                ['US-WA', 708],
-                ['US-WY', 28],
-                ['US-HI', 0],
-                ['US-UT', 73],
-                ['US-NJ', 75],
-                ['US-NY', 120],
-                ['US-NH', 17],
-                ['US-VA', 85],
-                ['US-WV', 106],
-                ['US-TX', 253],
-                ['US-ME', 20],
-                ['US-VT', 10],
-                ['US-LA', 44],
-                ['US-MA', 37],
-                ['US-MS', 24],
-                ['US-WI', 105],
-                ['US-KS', 49],
-                ['US-ID', 103],
-                ['US-NE', 9],
-                ['US-TN', 104],
-                ['US-MO', 53],
-                ['US-NV', 9]
+                ['Alabama', 101],
+                ['Alaska', 21],
+                ['Arizona', 85],
+                ['Arkansas', 110],
+                ['California', 460],
+                ['Colorado', 130],
+                ['Connecticut', 21],
+                ['Delaware', 5],
+                ['Florida', 337],
+                ['Georgia', 139],
+                ['Hawaii', 0],
+                ['Idaho', 103],
+                ['Illinois', 302],
+                ['Indiana', 82],
+                ['Iowa', 76],
+                ['Kansas', 49],
+                ['Kentucky', 115],
+                ['Louisiana', 44],
+                ['Maine', 20],
+                ['Maryland', 35],
+                ['Massachusetts', 37],
+                ['Michigan', 225],
+                ['Minnesota', 76],
+                ['Mississippi', 24],
+                ['Missouri', 166],
+                ['Montana', 53],
+                ['Nebraska', 15],
+                ['Nevada', 9],
+                ['New Hampshire', 17],
+                ['New Jersey', 75],
+                ['New Mexico', 43],
+                ['New York', 120],
+                ['North Carolina', 106],
+                ['North Dakota', 6],
+                ['Ohio', 318],
+                ['Oklahoma', 111],
+                ['Oregon', 257],
+                ['Pennsylvania', 125],
+                ['Rhode Island', 5],
+                ['South Carolina', 57],
+                ['South Dakota', 19],
+                ['Tennessee', 104],
+                ['Texas', 253],
+                ['Utah', 73],
+                ['Vermont', 10],
+                ['Virginia', 85],
+                ['Washington', 708],
+                ['West Virginia', 106],
+                ['Wisconsin', 105],
+                ['Wyoming', 28]
+
             ]);
 
-            var options = {
+            var view = new google.visualization.DataView(data);
 
-                colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
-                backgroundColor: '#81d4fa',
-                datalessRegionColor: '#f8bbd0',
-                defaultColor: '#f5f5f5',
+            var options = {
+                colorAxis: { colors: ['lightyellow', 'green'] },
+                backgroundColor: 'skyblue',
+                //datalessRegionColor:'lighttan',
+                //defaultColor: 'darkgreen',
+                width: 1000,
+                height: 800,
+                region: "US",
+                resolution: "provinces"
             };
 
-            var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
-            chart.draw(data, { width: 1000, height: 800, region: "US", resolution: "provinces" });
+            var chart = new google.visualization.GeoChart(document.getElementById('bigfoot'));
+            google.visualization.events.addListener(chart, 'select', myClickHandler);
+            chart.draw(data, options);
+
+            function myClickHandler() {
+                var selection = chart.getSelection();
+                if (selection.length > 0) {
+                    var link = data.getValue(selection[0].row, 0);
+                    window.open(link, '_blank');
+                }
+            }
+
         };
     </script>
-
 </div>

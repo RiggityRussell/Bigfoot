@@ -1,12 +1,26 @@
-﻿namespace Bigfoot.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.IO.Compression;
+
+namespace Bigfoot.Models
 {
     public class Sightings
     {   
-            public int ID { get; set; }
-            public string Location { get; set; }
-            public double Validity { get; set; }
-            public string Description { get; set; }
-            public byte Photo { get; set; }
+        public int ID { get; set; }
+
+        [StringLength(20,MinimumLength = 4)]
+        [Required]
+        public string State { get; set; }
+        public string Month { get; set; }
+        public double Year { get; set; }
+        public string Class { get; set; }
+        public string ?Location { get; set; }
+
+        [Required]
+        [StringLength(50, MinimumLength = 10)]
+        public string ?Description { get; set; }
+        //public string Upload { get; set; }
+        public string? PhotoPath { get; set; }
 
     }
 }
