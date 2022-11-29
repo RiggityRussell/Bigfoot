@@ -22,11 +22,14 @@
 <p>
     <a asp-page="Create" class="btn">New Sighting</a>
 </p>
+</select>
 <table class="table text-white table-bordered table-dark table-hover table-sm table-responsive">
     <thead>
         <tr>
             <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                 @Html.DisplayNameFor(model => model.Sightings[0].Location)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sightings[0].Validity)
