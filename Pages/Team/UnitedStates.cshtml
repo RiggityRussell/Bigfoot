@@ -71,7 +71,8 @@
                 ['Washington', 708],
                 ['West Virginia', 106],
                 ['Wisconsin', 105],
-                ['Wyoming', 28]
+                ['Wyoming', 28],
+                ['Blank',0]
 
             ]);
 
@@ -94,9 +95,30 @@
 
             function myClickHandler() {
                 var selection = chart.getSelection();
+
                 if (selection.length > 0) {
                     var link = data.getValue(selection[0].row, 0);
-                    window.open(link, '_blank');
+                    console.log(link)
+                    if (link == "Alaska"){
+                        window.open(link, '_blank');
+                    }
+                    else if (link == "Michigan")
+                    {
+                        window.open(link, '_blank');
+                    }
+                    else if (link == "Florida") {
+                        window.open(link, '_blank');
+                    }
+                    else if (link == "California") {
+                        window.open(link, '_blank');
+                    }
+                    else if (link == "Washington") {
+                        window.open(link, '_blank');
+                    }
+                    else 
+                    {
+                        window.open('Blank', '_blank');
+                    }
                 }
             }
 
