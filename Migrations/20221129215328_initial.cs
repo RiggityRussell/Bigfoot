@@ -14,13 +14,12 @@ namespace Bigfoot.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Month = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Year = table.Column<double>(type: "float", nullable: false),
                     Class = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false)
                 },
                 constraints: table =>
                 {
