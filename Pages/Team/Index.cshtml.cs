@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Bigfoot.Data;
 using Bigfoot.Models;
+using Microsoft.Data.SqlClient;
 
 namespace Bigfoot.Pages.Team
 {
@@ -19,14 +20,32 @@ namespace Bigfoot.Pages.Team
             _context = context;
         }
 
+        public string NameSort { get; set; }
+
         public IList<Sightings> Sightings { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "desc" : "";
             if (_context.Sightings != null)
             {
                 Sightings = await _context.Sightings.ToListAsync();
             }
+            var title = from l in _context.Sightings
+                        select l;
+
+            if (sortOrder == "desc")
+            {
+                title = title.OrderByDescending(m => m.Location);
+            }
+            else
+            {
+                title = title.OrderBy(m => m.Location);
+            }
+
+
+             Sightings = await title.ToListAsync();
+            
         }
 
 
