@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    //var photoPath = "~/images/" + (Model.Sightings.PhotoPath ?? "noimage.jpg");
 }
 
 <h1>Edit</h1>
@@ -15,36 +16,56 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Sightings.ID" />
             <div class="form-group">
-                <label asp-for="Sightings.Location" class="control-label"></label>
-                <input asp-for="Sightings.Location" class="form-control" />
-                <span asp-validation-for="Sightings.Location" class="text-danger"></span>
+                <label asp-for="Sightings.State" class="control-label"></label>
+                <input asp-for="Sightings.State" class="form-control" />
+                <span asp-validation-for="Sightings.State" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Sightings.Validity" class="control-label"></label>
-                <input asp-for="Sightings.Validity" class="form-control" />
-                <span asp-validation-for="Sightings.Validity" class="text-danger"></span>
+                <label asp-for="Sightings.Class" class="control-label"></label>
+                <input asp-for="Sightings.Class" class="form-control" />
+                <span asp-validation-for="Sightings.Class" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sightings.Description" class="control-label"></label>
                 <input asp-for="Sightings.Description" class="form-control" />
                 <span asp-validation-for="Sightings.Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Sightings.Photo" class="control-label"></label>
-                <input asp-for="Sightings.Photo" class="form-control" />
-                <span asp-validation-for="Sightings.Photo" class="text-danger"></span>
+
+@*            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <div class="custom-file">
+                    <input asp-for="Photo" class="custom-file-input form-control" />
+                    <label class="custom-file-label">Upload Photo</label>
+                </div>
             </div>
+
+            <div class="form-group">
+                <img class="imageThumbnail" src="@photoPath" asp-append-version="true"/>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+
+
+@*                <script>
+                    $(document).ready(function () {
+                        $('.custom-file-input').on("change", function () {
+                            var fileName = $(this).val().split("\\").pop();
+                            $(this).next('.custom-file-label').html(fileName);
+                        });
+                    });
+                </script>*@
+            }
         </form>
     </div>
 </div>
-
+ @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+ }
 <div>
     <a asp-page="./Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+

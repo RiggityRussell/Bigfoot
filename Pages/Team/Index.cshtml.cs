@@ -47,5 +47,7 @@ namespace Bigfoot.Pages.Team
              Sightings = await title.ToListAsync();
             
         }
+
+
     }
 }

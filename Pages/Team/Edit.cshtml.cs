@@ -23,6 +23,9 @@ namespace Bigfoot.Pages.Team
         [BindProperty]
         public Sightings Sightings { get; set; } = default!;
 
+        [BindProperty]
+        public IFormFile Photo { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Sightings == null)
