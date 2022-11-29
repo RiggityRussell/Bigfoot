@@ -5,23 +5,62 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
 <div>
-    <h4>Sightings</h4>
+    <h1>Details</h1>
     <hr />
+
+    <div style="background-color:aliceblue;">
+        <h4>@Html.DisplayFor(model => model.Sightings.State) |  @Html.DisplayFor(model => model.Sightings.Year) | @Html.DisplayFor(model => model.Sightings.Month)</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-1">
+                @Html.DisplayNameFor(model => model.Sightings.Class)
+                @Html.DisplayFor(model => model.Sightings.Class)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.TextAreaFor(model => model.Sightings.Class,new{style = "height:20px;", @class = "form-control disable"})
+            </dd>
+        </dl>
+        <dl class="row">
+            <div class="col-sm-9">
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Sightings.Description)
+                </dt>
+                <dd class="col-sm-12 table">
+                    @Html.DisplayFor(model => model.Sightings.Description,new{style = "height:200px; width:50%;", @class = "form-control"})
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Sightings.Location)
+                </dt>
+                <dd class="col-sm-12">
+                    @Html.TextAreaFor(model => model.Sightings.Location,new{style = "height:200px;", @class = "form-control"})
+                </dd>
+            </div>
+@*            <div class="col-sm-3 text-center">
+                <dt style="background-color:white; border:black 1px solid;">
+                    @Html.DisplayNameFor(model => model.Sightings.PhotoPath)
+                </dt>
+                <dd style="background-color:lightgray; height:200px;border-bottom:black 1px solid;border-left:black 1px solid;border-right:black 1px solid;">
+                    @Html.DisplayFor(model => model.Sightings.PhotoPath)
+                </dd>
+            </div>*@
+        </dl>
+    </div>
+
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Sightings.Location)
+            @Html.DisplayNameFor(model => model.Sightings.State)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Sightings.Location)
+            @Html.DisplayFor(model => model.Sightings.State)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Sightings.Validity)
+            @Html.DisplayNameFor(model => model.Sightings.Class)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Sightings.Validity)
+            @Html.DisplayFor(model => model.Sightings.Class)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Sightings.Description)
@@ -30,11 +69,17 @@
             @Html.DisplayFor(model => model.Sightings.Description)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sightings.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sightings.Location)
+        </dd>
+@*        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Sightings.Photo)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Sightings.Photo)
-        </dd>
+        </dd>*@
     </dl>
 </div>
 <div>

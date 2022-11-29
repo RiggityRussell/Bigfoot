@@ -22,23 +22,28 @@
 <p>
     <a asp-page="Create" class="btn">New Sighting</a>
 </p>
-</select>
 <table class="table text-white table-bordered table-dark table-hover table-sm table-responsive">
     <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                @Html.DisplayNameFor(model => model.Sightings[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sightings[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sightings[0].Month)
+
+            </th>
+
+            <th>
                 @Html.DisplayNameFor(model => model.Sightings[0].Location)
-                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sightings[0].Validity)
+                @Html.DisplayNameFor(model => model.Sightings[0].Class)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sightings[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sightings[0].Photo)
+                @Html.DisplayNameFor(model => model.Sightings[0].PhotoPath)
             </th>
             <th></th>
         </tr>
@@ -47,23 +52,32 @@
 @foreach (var item in Model.Sightings) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+
+            <td>
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Validity)
+                @Html.DisplayFor(modelItem => item.Class)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
+@*            <td>
                 @Html.DisplayFor(modelItem => item.Photo)
-            </td>
+            </td>*@
             <td>
                 <a asp-page="./Edit" class="btn2" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" class="btn2" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" class="btn2" asp-route-id="@item.ID">Delete</a>
+
             </td>
         </tr>
 }
     </tbody>
 </table>
+
