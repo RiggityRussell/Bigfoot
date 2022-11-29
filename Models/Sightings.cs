@@ -17,10 +17,10 @@ namespace Bigfoot.Models
         public string ?Location { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 10)]
+        [StringLength(5000, MinimumLength = 10)]
         public string ?Description { get; set; }
         //public string Upload { get; set; }
-        public string? PhotoPath { get; set; }
+        //public string? PhotoPath { get; set; }
 
     }
 }
