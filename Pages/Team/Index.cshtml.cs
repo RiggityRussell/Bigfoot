@@ -19,32 +19,52 @@ namespace Bigfoot.Pages.Team
         {
             _context = context;
         }
-
-        public string NameSort { get; set; }
-
         public IList<Sightings> Sightings { get;set; } = default!;
+        public string NameSort { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+        public string CurrentFilter { get; set; }
 
-        public async Task OnGetAsync(string sortOrder)
+
+
+
+
+        public async Task OnGetAsync(string sortOrder, string filterString)
         {
+            
             NameSort = String.IsNullOrEmpty(sortOrder) ? "desc" : "";
             if (_context.Sightings != null)
             {
                 Sightings = await _context.Sightings.ToListAsync();
             }
-            var title = from l in _context.Sightings
+            IQueryable<Sightings> title = from l in _context.Sightings
                         select l;
 
             if (sortOrder == "desc")
             {
-                title = title.OrderByDescending(m => m.Location);
+                title = title.OrderByDescending(m => m.State);
             }
             else
             {
-                title = title.OrderBy(m => m.Location);
+                title = title.OrderBy(m => m.State);
+            }
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                title = title.Where(l => l.State.Contains(SearchString));
             }
 
 
-             Sightings = await title.ToListAsync();
+             /*titles = from s in _context.Sightings select s;*/
+            CurrentFilter = filterString;
+
+            if (!String.IsNullOrEmpty(filterString))
+            {
+                title = title.Where(s => s.State.Contains(filterString));
+
+            }
+
+            Sightings = await title.ToListAsync();
             
         }
 
