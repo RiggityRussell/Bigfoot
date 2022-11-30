@@ -22,11 +22,24 @@
 <p>
     <a asp-page="Create" class="btn">New Sighting</a>
 </p>
+<p>
+<form>
+    <p class="text-white col-sm-6">
+        Search State: <input type="text" asp-for="SearchString" />
+        
+    </p>
+        <p class="text-white col-sm-6">
+            Filter: <input type="text" name="filterString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" />
+        </p>
+</form>
 <table class="table text-white table-bordered table-dark table-hover table-sm table-responsive">
     <thead>
         <tr>
             <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"> 
                 @Html.DisplayNameFor(model => model.Sightings[0].State)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sightings[0].Year)
