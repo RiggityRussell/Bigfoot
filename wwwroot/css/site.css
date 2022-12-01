@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Swabby';
+    src: url('../fonts/CaptainSwabbyNF.ttf');
+}
+
+@font-face {
+    font-family: 'Feet';
+    src: url('../fonts/FTSCanblDemo.TTF');
+}
+
 html {
   font-size: 14px;
 }

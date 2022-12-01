@@ -20,7 +20,12 @@ namespace Bigfoot.Pages.Team
             _context = context;
         }
         public IList<Sightings> Sightings { get;set; } = default!;
-        public string NameSort { get; set; }
+        public string StateSort { get; set; }
+        public string YearSort { get; set; }
+        public string MonthSort { get; set; }
+        public string ClassSort { get; set; }
+
+
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
         public string CurrentFilter { get; set; }
@@ -32,15 +37,46 @@ namespace Bigfoot.Pages.Team
         public async Task OnGetAsync(string sortOrder, string filterString)
         {
             
-            NameSort = String.IsNullOrEmpty(sortOrder) ? "desc" : "";
+            StateSort = String.IsNullOrEmpty(sortOrder) ? "State_desc" : "";
+            MonthSort = sortOrder == "Month" ? "Month_desc" : "Month";
+            ClassSort = sortOrder == "Class" ? "Class_desc" : "Class";
+            YearSort = sortOrder == "Year" ? "Year_desc" : "Year";
             if (_context.Sightings != null)
             {
                 Sightings = await _context.Sightings.ToListAsync();
             }
-            IQueryable<Sightings> title = from l in _context.Sightings
-                        select l;
+            IQueryable<Sightings> title = from i in _context.Sightings
+                        select i;
 
-            if (sortOrder == "desc")
+            switch (sortOrder)
+            {
+                case "State_desc":
+                    title = title.OrderByDescending(i => i.State);
+                    break;
+                case "Month":
+                    title = title.OrderBy(i => i.Month);
+                    break;
+                case "Month_desc":
+                    title = title.OrderByDescending(i => i.Month);
+                    break;
+                case "Class":
+                    title = title.OrderBy(i => i.Class);
+                    break;
+                case "Class_desc":
+                    title = title.OrderByDescending(i => i.Class);
+                    break;
+                case "Year":
+                    title = title.OrderBy(i => i.Year);
+                    break;
+                case "Year_desc":
+                    title = title.OrderByDescending(i => i.Year);
+                    break;
+                default:
+                    title = title.OrderBy(i => i.State);
+                    break;
+            }
+            /*
+            if (sortOrder == "State_desc")
             {
                 title = title.OrderByDescending(m => m.State);
             }
@@ -49,9 +85,18 @@ namespace Bigfoot.Pages.Team
                 title = title.OrderBy(m => m.State);
             }
 
+            if (sortOrder == "Year_desc")
+            {
+                title = title.OrderByDescending(m => m.Year);
+            }
+            else
+            {
+                title = title.OrderBy(m => m.Year);
+            }*/
+
             if (!string.IsNullOrEmpty(SearchString))
             {
-                title = title.Where(l => l.State.Contains(SearchString));
+                title = title.Where(e => e.State.Contains(SearchString));
             }
 
 
@@ -60,9 +105,12 @@ namespace Bigfoot.Pages.Team
 
             if (!String.IsNullOrEmpty(filterString))
             {
-                title = title.Where(s => s.State.Contains(filterString));
+                title = title.Where(s => s.Class.Contains(filterString)
+                || s.Month.Contains(filterString)
+                || s.Year.Contains(filterString));
 
             }
+            
 
             Sightings = await title.ToListAsync();
             

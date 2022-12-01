@@ -12,7 +12,7 @@ namespace Bigfoot.Models
         [Required]
         public string State { get; set; }
         public string Month { get; set; }
-        public double Year { get; set; }
+        public string Year { get; set; }
         public string Class { get; set; }
         public string ?Location { get; set; }
 
@@ -20,7 +20,7 @@ namespace Bigfoot.Models
         [StringLength(5000, MinimumLength = 10)]
         public string ?Description { get; set; }
         //public string Upload { get; set; }
-        //public string? PhotoPath { get; set; }
+        public string? PhotoPath { get; set; }
 
     }
 }
