@@ -2,8 +2,8 @@
 }
 
 .btn {
-    font-size: 16px;
-    padding: 12px 28px;
+    font-size: 20px;
+    padding:4px 28px;
     border-radius: 4px;
     color: black;
     background-color: lightblue;
@@ -19,8 +19,8 @@
 }
 
 .btn2 {
-    font-size: 12px;
-    padding: 8px 20px;
+    font-size: 16px;
+    padding: 4px 40px;
     border-radius: 4px;
     color: black;
     background-color: lightblue;
