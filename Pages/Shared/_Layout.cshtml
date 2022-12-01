@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bigfoot.styles.css" asp-append-version="true" />
+
     @RenderSection("head", required: false)
 
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3" style="background-color:darkslategray;">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Bigfoot</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -22,16 +23,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Team/Index">Bigfoot Sightings</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Team/Index">Bigfoot Sightings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Team/UnitedStates">US Sightings Map</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Team/UnitedStates">US Sightings Map</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Team/WorldMap">World Map</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Team/WorldMap">World Map</a>
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,18 @@
 ﻿@page
 @model Bigfoot.Pages.Team.WorldMapModel
+
+@section head{
+    <link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            background-image: url("/images/Pine_BG_01.jpg");
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+    </style>
+}
+
 @{
     ViewData["Title"] = "Bigfoot";
 }
