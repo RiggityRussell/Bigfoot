@@ -45,13 +45,17 @@ namespace Bigfoot.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<double>("Year")
-                        .HasColumnType("float");
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

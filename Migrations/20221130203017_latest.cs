@@ -4,7 +4,7 @@
 
 namespace Bigfoot.Migrations
 {
-    public partial class initial : Migration
+    public partial class latest : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,10 +16,11 @@ namespace Bigfoot.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     State = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Month = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Year = table.Column<double>(type: "float", nullable: false),
+                    Year = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Class = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
+                    PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
