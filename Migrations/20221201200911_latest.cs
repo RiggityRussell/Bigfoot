@@ -19,6 +19,7 @@ namespace Bigfoot.Migrations
                     Year = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Class = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Occurence = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
                     PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },

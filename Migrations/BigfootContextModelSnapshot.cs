@@ -45,6 +45,10 @@ namespace Bigfoot.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Occurence")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhotoPath")
                         .HasColumnType("nvarchar(max)");
 

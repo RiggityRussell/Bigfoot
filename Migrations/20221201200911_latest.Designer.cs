@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bigfoot.Migrations
 {
     [DbContext(typeof(BigfootContext))]
-    [Migration("20221130203017_latest")]
+    [Migration("20221201200911_latest")]
     partial class latest
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,10 @@ namespace Bigfoot.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Month")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Occurence")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

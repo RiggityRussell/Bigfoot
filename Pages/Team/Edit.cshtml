@@ -1,15 +1,24 @@
 ﻿@page
 @model Bigfoot.Pages.Team.EditModel
-
+@section head{
+    <link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            background-image: url("/images/Pine_BG_01.jpg");
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+    </style>
+}
 @{
     ViewData["Title"] = "Edit";
     //var photoPath = "~/images/" + (Model.Sightings.PhotoPath ?? "noimage.jpg");
 }
 
 <div class="continer">
+    <h1>Edit Sighting Report</h1>
     <main role="main" class="pb-3" style="background-color:aliceblue; padding:10px; border:solid 1px black;">
-        <h1 style="color:midnightblue; text-align:center; background-color:whitesmoke;border:dodgerblue 1px solid;margin-bottom:20px; border-radius:5px;">Edit Sighting Report</h1>
-
         <h4>Sighting Report:</h4>
         <hr />
         <div style="margin-bottom:10px;">

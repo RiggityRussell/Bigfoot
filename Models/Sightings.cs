@@ -17,6 +17,9 @@ namespace Bigfoot.Models
         public string ?Location { get; set; }
 
         [Required]
+        public string? Occurence { get; set; }
+
+        [Required]
         [StringLength(5000, MinimumLength = 10)]
         public string ?Description { get; set; }
         //public string Upload { get; set; }
