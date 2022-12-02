@@ -75,32 +75,13 @@ namespace Bigfoot.Pages.Team
                     title = title.OrderBy(i => i.State);
                     break;
             }
-            /*
-            if (sortOrder == "State_desc")
-            {
-                title = title.OrderByDescending(m => m.State);
-            }
-            else
-            {
-                title = title.OrderBy(m => m.State);
-            }
-
-            if (sortOrder == "Year_desc")
-            {
-                title = title.OrderByDescending(m => m.Year);
-            }
-            else
-            {
-                title = title.OrderBy(m => m.Year);
-            }*/
+         
 
             if (!string.IsNullOrEmpty(SearchString))
             {
                 title = title.Where(e => e.State.Contains(SearchString));
             }
 
-
-             /*titles = from s in _context.Sightings select s;*/
             CurrentFilter = filterString;
 
             if (!String.IsNullOrEmpty(filterString))
@@ -119,3 +100,21 @@ namespace Bigfoot.Pages.Team
 
     }
 }
+   /*
+            if (sortOrder == "State_desc")
+            {
+                title = title.OrderByDescending(m => m.State);
+            }
+            else
+            {
+                title = title.OrderBy(m => m.State);
+            }
+
+            if (sortOrder == "Year_desc")
+            {
+                title = title.OrderByDescending(m => m.Year);
+            }
+            else
+            {
+                title = title.OrderBy(m => m.Year);
+            }*/

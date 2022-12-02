@@ -5,11 +5,20 @@
     <link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
     <style type="text/css">
         body {
-            background-image: url("/images/Pine_BG_01.jpg");
             width: auto;
-            height: auto;
+            /* min-height: auto;*/
             margin: 0;
+            /* The image used */
+            background-image: url("/images/Pine_BG_01.jpg");
+            /* Set a specific height */
+            min-height: 500px;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
     </style>
 }
 
