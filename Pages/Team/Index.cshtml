@@ -69,7 +69,7 @@
                 @Html.DisplayNameFor(model => model.Sightings[0].Class)
                 </a>
             </th>
-            <th>
+            <th style="color:antiquewhite;">
                 @Html.DisplayNameFor(model => model.Sightings[0].Occurence)
             </th>
 
@@ -94,7 +94,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Class)
             </td>
-            <td>
+            <td >
                 @Html.DisplayFor(modelItem => item.Occurence)
             </td>
 
@@ -105,7 +105,6 @@
                 <a asp-page="./Edit" class="btn2" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" class="btn2" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" class="btn2" asp-route-id="@item.ID">Delete</a>
-
             </td>
         </tr>
 }

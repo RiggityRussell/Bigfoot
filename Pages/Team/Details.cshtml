@@ -1,13 +1,21 @@
 ﻿@page
 @model Bigfoot.Pages.Team.DetailsModel
 @section head{
-        <link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
         <style type="text/css">
             body {
-                background-image: url("/images/Pine_BG_01.jpg");
-                width: auto;
-                height: auto;
-                margin: 0;
+            width: auto;
+            /* min-height: auto;*/
+            margin: 0;
+            /* The image used */
+            background-image: url("/images/Pine_BG_01.jpg");
+            /* Set a specific height */
+            min-height: 500px;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
            }
         </style>
 }
@@ -17,9 +25,9 @@
 
 
 <div>
-    <h1>Sighting Details</h1>
+    <h1 style="font-family:Good; text-shadow:1px 1px antiquewhite;">Sighting Details</h1>
  
-    <div style="background-color:aliceblue; padding:10px; border:solid 1px black">
+    <div style="background-color:darkslategray; padding:10px; border:solid 1px black; color:white;">
         <h4>@Html.DisplayFor(model => model.Sightings.State) |  @Html.DisplayFor(model => model.Sightings.Year) | @Html.DisplayFor(model => model.Sightings.Month) | @Html.DisplayNameFor(model => model.Sightings.Class) @Html.DisplayFor(model => model.Sightings.Class)</h4>
         <hr />
 
@@ -29,19 +37,19 @@
                     @Html.DisplayNameFor(model => model.Sightings.Occurence)
                 </dt>
                 <dd class="col-sm-12">
-                    @Html.TextAreaFor(model => model.Sightings.Occurence,new{style = "min-height:100px; width:100%;", @class = "form-control bg-light", disabled="disabled"})
+                    @Html.TextAreaFor(model => model.Sightings.Occurence,new{style = "min-height:100px; width:100%;", @class = "form-control bg-dark text-white", disabled="disabled"})
                 </dd>
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.Sightings.Description)
                 </dt>
                 <dd class="col-sm-12">
-                    @Html.TextAreaFor(model => model.Sightings.Description,new{style = "min-height:200px; width:100%;", @class = "form-control bg-light", disabled="disabled"})
+                    @Html.TextAreaFor(model => model.Sightings.Description,new{style = "min-height:200px; width:100%;", @class = "form-control bg-dark text-white", disabled="disabled"})
                 </dd>
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.Sightings.Location)
                 </dt>
                 <dd class="col-sm-12">
-                    @Html.TextAreaFor(model => model.Sightings.Location,new{style = "min-height:60px; width:100%;", @class = "form-control bg-light", disabled="disabled"})
+                    @Html.TextAreaFor(model => model.Sightings.Location,new{style = "min-height:60px; width:100%;", @class = "form-control bg-dark text-white", disabled="disabled"})
                 </dd>
             </div>
             <div class="col-sm-3 text-center">
