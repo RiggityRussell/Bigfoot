@@ -20,7 +20,7 @@ namespace Bigfoot.Pages.Team
         }
 
         [BindProperty]
-      public Sightings Sightings { get; set; }
+        public Sightings Sightings { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

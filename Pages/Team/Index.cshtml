@@ -26,7 +26,7 @@
 }
 
 
-<h1 style="font-family:Feet; text-shadow:1px 1px white;">Bigfoot Database</h1>
+<h1 style="font-family:Good; text-shadow:1px 1px antiquewhite;">Bigfoot Database</h1>
 
 <p>
     <a asp-page="Create" class="btn">New Sighting</a>
@@ -69,7 +69,7 @@
                 @Html.DisplayNameFor(model => model.Sightings[0].Class)
                 </a>
             </th>
-            <th>
+            <th style="color:antiquewhite;">
                 @Html.DisplayNameFor(model => model.Sightings[0].Occurence)
             </th>
 
@@ -94,7 +94,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Class)
             </td>
-            <td>
+            <td >
                 @Html.DisplayFor(modelItem => item.Occurence)
             </td>
 
@@ -105,7 +105,6 @@
                 <a asp-page="./Edit" class="btn2" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" class="btn2" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" class="btn2" asp-route-id="@item.ID">Delete</a>
-
             </td>
         </tr>
 }
@@ -113,7 +112,7 @@
 </table>
 
 
-    <div style="padding:10px;background-color:black; color:white; margin-bottom:1%">
+    <div style="padding-left:10px; padding-right:10px; padding-top:5px; background-color:darkslategray; color:white; margin-bottom:1%; border:2px solid black;">
         <H6 style="text-decoration:underline;">Class Definitions</H6>
         <p style="font-size:14px;font-weight:400;"> Class A : reports involve clear sightings in circumstances where misinterpretation or misidentification of other animals can be ruled out with greater confidence. For example, there are several footprint cases that are very well documented. These are considered Class A reports, because misidentification of common animals can be confidently ruled out, thus the potential for misinterpretation is very low.</p>
         <p style="font-size:14px;font-weight:400;"> Class B : Incidents where a possible sasquatch was observed at a great distance or in poor lighting conditions and incidents in any other circumstance that did not afford a clear view of the subject are considered Class B reports.</p>
