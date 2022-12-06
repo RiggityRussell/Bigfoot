@@ -34,7 +34,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
                     new Sightings
                     {
@@ -45,7 +45,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -57,7 +57,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -69,7 +69,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -81,7 +81,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -95,7 +95,7 @@ namespace Bigfoot.Models
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows among some cattails." +
                         "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                         "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -107,7 +107,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -119,7 +119,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     },
 
                     new Sightings
@@ -131,7 +131,7 @@ namespace Bigfoot.Models
                         Occurence = "Campers had small stones thrown at their tent.  Also heard grunting noises similiar to an ape.",
                         Location = "Southeast Fairbanks Borough",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        PhotoPath = "bigfoot.jpg"
+                        //PhotoPath = "bigfoot.jpg"
                     }
                 );
                 context.SaveChanges();
