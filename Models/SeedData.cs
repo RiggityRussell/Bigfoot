@@ -45,7 +45,6 @@ namespace Bigfoot.Models
                         Occurence = "While fishing a man saw what could only be BigFoot.",
                         Location = "Miami",
                         Description = "Fisherman saw a large orangutan like creature walking in the shallows amoung some cattails.",
-                        
                     },
 
                     new Sightings
@@ -81,7 +80,6 @@ namespace Bigfoot.Models
                         Occurence = "A woman witnessed BigFoot from her kitchen window.",
                         Location = "Grand Traverse County",
                         Description = "A woman washing dishes witnessed a shadowy figure covered in fur in the woods behind her house.",
-                        
                     },
 
                     new Sightings
@@ -93,7 +91,6 @@ namespace Bigfoot.Models
                         Occurence = "A Cowboy watching his flock witnessed a BigFoot carrying a sheep off.",
                         Location = "Denton",
                         Description = "A Cowboy tending to his sheep witnessed a BigFoot carry a sheep off in the dusk, when it would be able to escape into darkness and not be found."
-                        
                     },
 
                     new Sightings
@@ -105,7 +102,6 @@ namespace Bigfoot.Models
                         Occurence = "Sighting off Indian Road behind isolated (at the time) Desert Hot Springs Condo complex",
                         Location = "Riverside County",
                         Description = "Was going back to close shop at approx. 10PM in the northern desert above Palm Springs, CA., and saw a huge light tan colored biped with soft blowing hair .Because I was in a small VW bug with the light pointing down into the street upon leaving the driveway facing out into the desert.\r\n\r\nI froze there with my dim headlight on it and it too froze there completely still,. I flashed my worthless high beams at it and it took 2 giant steps backwards and then one to my left, it's right and was gone into the dark. I was overcome with severe fear, panic and anxiety, and had to return home again.",
-                        
                     },
 
                     new Sightings
@@ -166,7 +162,6 @@ namespace Bigfoot.Models
                         Month = "February",
                         Year = "2005",
                         Class = "B",
-
                         Occurence = "Hikers spot a dark figure walking on a snowy mountainside near Winnemucca",
                         Location = "Humboldt",
                         Description = "Two hikers observed a BigFoot like creature while hiking up a snowy Mountainside near Winnemucca, the hikers are assured they were the only humans out there that day.",
