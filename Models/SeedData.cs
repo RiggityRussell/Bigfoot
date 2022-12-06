@@ -240,9 +240,6 @@ namespace Bigfoot.Models
                         PhotoPath = "bigfoot.jpg"
                     }
 
-
-
-
                 );
                 context.SaveChanges();
             }
