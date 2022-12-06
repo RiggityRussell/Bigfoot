@@ -23,7 +23,7 @@ namespace Bigfoot.Models
         [StringLength(5000, MinimumLength = 10)]
         public string ?Description { get; set; }
         //public string Upload { get; set; }
-        public string? PhotoPath { get; set; }
+        /*public string? PhotoPath { get; set; }*/
 
     }
 }
