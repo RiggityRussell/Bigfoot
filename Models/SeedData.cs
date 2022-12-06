@@ -236,6 +236,9 @@ namespace Bigfoot.Models
                         Location = "Chaffee County",
                         Description = "I noticed animal droppings that appeared large human shaped under the uphill undergrowth, spaced every 10-20ft. I commented on the size and shape of the droppings with my wife and agreed they couldn’t be human as there were too many and under the branches of the uphill side We discussed how they appeared to be marking a territory. The droppings continued for maybe 150ft. We continue down/East on the trail. At about the 1/2 mile marrk a deer startled us running from the uphill side across the trail and down the other side. My wife was spooked and we turned around to go back. As we neared the spot where the droppings were I spotted a single foot print on the uphill side partly hidden by branches.",
                     }
+
+
+
                 );
                 context.SaveChanges();
             }
