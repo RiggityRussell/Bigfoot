@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bigfoot.Migrations
 {
     [DbContext(typeof(BigfootContext))]
-    [Migration("20221201200911_latest")]
-    partial class latest
+    [Migration("20221206221459_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,9 +49,6 @@ namespace Bigfoot.Migrations
 
                     b.Property<string>("Occurence")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotoPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
