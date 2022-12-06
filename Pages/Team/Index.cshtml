@@ -31,17 +31,27 @@
 <p>
     <a asp-page="Create" class="btn">New Sighting</a>
 </p>
-<p>
-<form>
-    <p class="text-white col-sm-6">
-        Search State: <input type="text" asp-for="SearchString" />
+
+    <div class="row">
         
-    </p>
-        <p class="text-white col-sm-6">
-            Filter: <input type="text" name="filterString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn2" />
-        </p>
-</form>
+        <div class="text-white col-sm-7" style="margin-right:-5%;">
+            <form>
+                <p class="text-white col-sm-6">
+                    Search State: <input type="text" asp-for="SearchString" />
+                </p>           
+                <p class="text-white col-sm-6">
+                    Filter: <input type="text" name="filterString" value="@Model.CurrentFilter" />
+                    <input type="submit" value="Search" class="btn2" />
+                </p> 
+            </form>
+        </div>
+        <div class="text-white col-sm-5" style=" margin-top:-6.8%; max-height:190px;">
+            <p class="text-white col-sm-12">
+                <img src="/images/BF_TreeLine_02.png" alt="BigfootTrees"/>   
+            </p>
+        </div>
+    </div>
+
 
 
 
