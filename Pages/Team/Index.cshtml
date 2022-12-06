@@ -51,11 +51,6 @@
             </p>
         </div>
     </div>
-
-
-
-
-
 <table class="table text-white table-bordered table-dark table-hover flex-lg-column">
     <thead>
         <tr class="text-center">
@@ -111,11 +106,11 @@
 @*            <td>
                 @Html.DisplayFor(modelItem => item.Photo)
             </td>*@
-            <td >
-                <a asp-page="./Edit" class="btn2" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" class="btn2" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" class="btn2" asp-route-id="@item.ID">Delete</a>
-            </td>
+                <td style="width: 300px">
+                    <a asp-page="./Edit" class="btn2" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" class="btn2" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" class="btn2" asp-route-id="@item.ID">Delete</a>
+                </td>
         </tr>
 }
     </tbody>
