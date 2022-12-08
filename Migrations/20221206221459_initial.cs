@@ -4,7 +4,7 @@
 
 namespace Bigfoot.Migrations
 {
-    public partial class latest : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,8 +20,7 @@ namespace Bigfoot.Migrations
                     Class = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Occurence = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false),
-                    PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: false)
                 },
                 constraints: table =>
                 {
